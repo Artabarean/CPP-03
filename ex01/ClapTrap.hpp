@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:57 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/13 12:42:01 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/13 14:17:09 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ class ClapTrap
 {
 	public:
 		ClapTrap(std::string name);
+		ClapTrap(const ClapTrap&);
 		~ClapTrap(void);
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+		ClapTrap& operator=(const ClapTrap&);
+		
 
 	private:
 		std::string name;

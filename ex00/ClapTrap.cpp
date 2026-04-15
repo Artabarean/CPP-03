@@ -18,6 +18,12 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << this->name << " has spawned on the battlefield" << std::endl;
 }
 
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = other;
+}
+
 ClapTrap::~ClapTrap(void)
 {
 	std::cout << this->name << " has despawned" << std::endl;
@@ -78,4 +84,14 @@ void ClapTrap::beRepaired(unsigned int amount)
 	if (this->Hit_points > 10)
 		this->Hit_points = 10;
 	std::cout << this->name << " repairs themselves for " << amount << " hit points!" << std::endl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->Attack_damage = other.Attack_damage;
+	this->Hit_points = other.Hit_points;
+	this->Energy_points = other.Energy_points;
+	this->name = other.name;
+	return (*this);
 }

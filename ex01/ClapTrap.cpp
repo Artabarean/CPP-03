@@ -6,16 +6,22 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:50 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/13 14:14:55 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/13 12:50:20 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name)
-	: name(name), Hit_points(100), Energy_points(50), Attack_damage(20)
+	: name(name), Hit_points(10), Energy_points(10), Attack_damage(0)
 {
 	std::cout << this->name << " has spawned on the battlefield" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = other;
 }
 
 ClapTrap::~ClapTrap(void)
@@ -68,14 +74,24 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << this->name << " lacks the necessary energy points to be repaired!" << std::endl;
 		return;
 	}
-	if (this->Hit_points == 100)
+	if (this->Hit_points == 10)
 	{
 		std::cout << this->name << " can't repair themselves since they are already full health!" << std::endl;
 		return;
 	}
 	this->Energy_points -= 1;
 	this->Hit_points += amount;
-	if (this->Hit_points > 100)
-		this->Hit_points = 100;
+	if (this->Hit_points > 10)
+		this->Hit_points = 10;
 	std::cout << this->name << " repairs themselves for " << amount << " hit points!" << std::endl;
+}
+
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->Attack_damage = other.Attack_damage;
+	this->Hit_points = other.Hit_points;
+	this->Energy_points = other.Energy_points;
+	this->name = other.name;
+	return (*this);
 }

@@ -16,6 +16,7 @@ int main(void)
 {
 	ClapTrap Epyon("Epyon");
 	ClapTrap Wingzero("Wingzero");
+	ClapTrap Epyon2(Epyon);
 
 	for (int i = 0; i < 12; i++)
 	{
