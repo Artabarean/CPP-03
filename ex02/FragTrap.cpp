@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 12:03:25 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 12:36:50 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/16 14:23:37 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ FragTrap::FragTrap(void)
 	this->Hit_points = 100;
 	this->Attack_damage = 30;
 	this->Energy_points = 100;
+	this->MaxHP = this->Hit_points;
 	std::cout << "Default constructor for a FragTrap instance has been called" << std::endl;
 }
 
@@ -26,6 +27,7 @@ FragTrap::FragTrap(std::string name)
 	this->Hit_points = 100;
 	this->Attack_damage = 30;
 	this->Energy_points = 100;
+	this->MaxHP = this->Hit_points;
 	std::cout << this->name << " has spawned as a FragTrap instance on the battlefield" << std::endl;
 }
 FragTrap::FragTrap(FragTrap &other)
@@ -44,6 +46,7 @@ FragTrap& FragTrap::operator=(const FragTrap &other)
 	this->Attack_damage = other.Attack_damage;
 	this->Hit_points = other.Hit_points;
 	this->Energy_points = other.Energy_points;
+	this->MaxHP = other.MaxHP;
 	this->name = other.name;
 	return (*this);
 }

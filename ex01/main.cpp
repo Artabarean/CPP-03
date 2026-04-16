@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 09:59:56 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 11:43:48 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/16 12:57:58 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int main(void)
 	ScavTrap Zaku("Zaku");
 	ScavTrap Rx78_2(Rx78);
 
+	Rx78_2.beRepaired(10);
+	Zaku.beRepaired(10);
 	for (int i = 0; i < 51; i++)
 	{
 		Rx78_2.attack("Zaku");

@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 09:59:52 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 12:37:21 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/16 14:22:28 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ ScavTrap::ScavTrap(void)
 	this->Hit_points = 100;
 	this->Attack_damage = 20;
 	this->Energy_points = 50;
+	this->MaxHP = this->Hit_points;
 	std::cout << "Default constructor for a ScavTrap instance has been called" << std::endl;
 }
 
@@ -27,6 +28,7 @@ ScavTrap::ScavTrap(std::string name)
 	this->Hit_points = 100;
 	this->Attack_damage = 20;
 	this->Energy_points = 50;
+	this->MaxHP = this->Hit_points;
 	std::cout << this->name << " has spawned as a ScavTrap instance on the battlefield" << std::endl;
 }
 ScavTrap::ScavTrap(ScavTrap &other)
@@ -65,6 +67,8 @@ ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 	this->Attack_damage = other.Attack_damage;
 	this->Hit_points = other.Hit_points;
 	this->Energy_points = other.Energy_points;
+	this->MaxHP = other.MaxHP;
+	this->gatekeep = other.gatekeep;
 	this->name = other.name;
 	return (*this);
 }

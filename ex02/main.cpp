@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 09:59:56 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 12:23:16 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/16 14:24:06 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int main(void)
 	FragTrap Zaku("Zaku");
 	FragTrap Zaku_2(Zaku);
 
+	Zaku_2.beRepaired(10);
+	Rx78.beRepaired(10);
 	for (int i = 0; i < 101; i++)
 	{
 		Zaku_2.attack("Rx78");

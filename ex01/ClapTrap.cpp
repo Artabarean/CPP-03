@@ -6,21 +6,23 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:50 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 12:31:50 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/16 12:59:50 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void)
-	: name("Default"), Hit_points(10), Energy_points(10), Attack_damage(0), MaxHP(Hit_points)
+	: name("Default"), Hit_points(10), Energy_points(10), Attack_damage(0)
 {
+	this->MaxHP = Hit_points;
 	std::cout << "Default constructor for a ClapTrap instance has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
-	: name(name), Hit_points(10), Energy_points(10), Attack_damage(0), MaxHP(Hit_points)
+	: name(name), Hit_points(10), Energy_points(10), Attack_damage(0)
 {
+	this->MaxHP = Hit_points;
 	std::cout << this->name << " has spawned as a ClapTrap instance on the battlefield" << std::endl;
 }
 
