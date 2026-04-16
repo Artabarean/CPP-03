@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:57 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/13 14:17:09 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/16 10:14:20 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 class ClapTrap
 {
 	public:
+		ClapTrap(void);
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap&);
 		~ClapTrap(void);

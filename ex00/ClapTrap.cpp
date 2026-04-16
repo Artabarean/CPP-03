@@ -6,21 +6,27 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:50 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/13 12:50:20 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/16 10:18:41 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+	: name("Default"), Hit_points(10), Energy_points(10), Attack_damage(0)
+{
+	std::cout << "Default constructor for a Claptrap instance has been called" << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name)
 	: name(name), Hit_points(10), Energy_points(10), Attack_damage(0)
 {
-	std::cout << this->name << " has spawned on the battlefield" << std::endl;
+	std::cout << this->name << " has spawned as a ClapTrap instance on the battlefield" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << other.name << " clone created" << std::endl;
 	*this = other;
 }
 
