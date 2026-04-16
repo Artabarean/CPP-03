@@ -6,27 +6,33 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:50 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/13 12:50:20 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/16 11:42:38 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name)
-	: name(name), Hit_points(10), Energy_points(10), Attack_damage(0)
+ClapTrap::ClapTrap(void)
+	: name("Default"), Hit_points(100), Energy_points(50), Attack_damage(20), MaxHP(Hit_points)
 {
-	std::cout << this->name << " has spawned on the battlefield" << std::endl;
+	std::cout << "Default constructor for a ClapTrap instance has been called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name)
+	: name(name), Hit_points(100), Energy_points(50), Attack_damage(20), MaxHP(Hit_points)
+{
+	std::cout << this->name << " has spawned as a ClapTrap instance on the battlefield" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = other;
+	std::cout << this->name << " clone has been created" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << this->name << " has despawned" << std::endl;
+	std::cout << this->name << " was a ClapTrap instance" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -74,15 +80,15 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << this->name << " lacks the necessary energy points to be repaired!" << std::endl;
 		return;
 	}
-	if (this->Hit_points == 10)
+	if (this->Hit_points == this->getMaxHP())
 	{
 		std::cout << this->name << " can't repair themselves since they are already full health!" << std::endl;
 		return;
 	}
 	this->Energy_points -= 1;
 	this->Hit_points += amount;
-	if (this->Hit_points > 10)
-		this->Hit_points = 10;
+	if (this->Hit_points > this->getMaxHP())
+		this->Hit_points = this->getMaxHP();
 	std::cout << this->name << " repairs themselves for " << amount << " hit points!" << std::endl;
 }
 
@@ -94,4 +100,19 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 	this->Energy_points = other.Energy_points;
 	this->name = other.name;
 	return (*this);
+}
+
+int ClapTrap::getDamage(void)
+{
+	return (this->Attack_damage);
+}
+
+int ClapTrap::getMaxHP(void)
+{
+	return (this->MaxHP);
+}
+
+int ClapTrap::getHP(void)
+{
+	return (this->Hit_points);
 }
