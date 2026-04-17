@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:50 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 12:59:50 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/17 10:00:43 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 	this->Attack_damage = other.Attack_damage;
 	this->Hit_points = other.Hit_points;
 	this->Energy_points = other.Energy_points;
+	this->MaxHP = other.MaxHP;
 	this->name = other.name;
 	return (*this);
 }
