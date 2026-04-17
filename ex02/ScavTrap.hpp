@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 14:07:47 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 11:42:00 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:32:03 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap : public ClapTrap
 		ScavTrap(ScavTrap &);
 		~ScavTrap(void);
 		void	guardGate(void);
+		void	attack(const std::string& target);
 		ScavTrap& operator=(const ScavTrap&);
 	
 	private:

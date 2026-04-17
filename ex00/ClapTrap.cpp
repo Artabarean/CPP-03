@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:50 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 10:18:41 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:10:56 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	std::cout << other.name << " clone created" << std::endl;
 	*this = other;
+	std::cout << other.name << " clone created" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)

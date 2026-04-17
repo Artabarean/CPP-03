@@ -6,15 +6,16 @@
 #    By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/13 14:10:21 by atabarea          #+#    #+#              #
-#    Updated: 2026/04/16 12:01:33 by atabarea         ###   ########.fr        #
+#    Updated: 2026/04/17 12:26:35 by atabarea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= FragTrap
+NAME		= DiamondTrap
 CXX			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98  -Wshadow -Wno-shadow
 
 SRC		= \
+	DiamondTrap.cpp \
 	ScavTrap.cpp \
 	ClapTrap.cpp \
 	FragTrap.cpp \

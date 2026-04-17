@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:57 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 11:42:11 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:17:22 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class ClapTrap
 		int		getDamage(void);
 		int		getMaxHP(void);
 		int		getHP(void);
+		int 	getEnergy(void);
 		ClapTrap& operator=(const ClapTrap&);
 
 	protected:

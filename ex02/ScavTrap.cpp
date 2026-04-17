@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 09:59:52 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/16 14:22:25 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:34:12 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,24 @@ void	ScavTrap::guardGate(void)
 		std::cout << this->name << " disables the gatekeeper mode" << std::endl;
 		this->gatekeep = 0;
 	}
+}
+
+void ScavTrap::attack(const std::string& target)
+{
+	if (this->Hit_points <= 0)
+	{
+		std::cout << this->name << " as a ScavTrap is dead and won't be able to attack " << target << "!" << std::endl;
+		return;
+	}
+	if (Energy_points > 0)
+		this->Energy_points -= 1;
+	else
+	{
+		std::cout << this->name << " as a ScavTrap doesn't have enough energy points to attack " << target << "!" << std::endl;
+		return;
+	}
+	std::cout << this->name << " as a ScavTrap attacks " << target << ", causing " << this->Attack_damage 
+		<< " points of damage!" << std::endl;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap &other)

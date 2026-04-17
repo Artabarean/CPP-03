@@ -6,14 +6,14 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 10:59:50 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/17 10:05:12 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/17 12:28:36 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void)
-	: name("Default"), Hit_points(10), Energy_points(10), Attack_damage(0)
+	: name("Default_clap_name"), Hit_points(10), Energy_points(10), Attack_damage(0)
 {
 	this->MaxHP = Hit_points;
 	std::cout << "Default constructor for a ClapTrap instance has been called" << std::endl;
@@ -118,4 +118,9 @@ int ClapTrap::getMaxHP(void)
 int ClapTrap::getHP(void)
 {
 	return (this->Hit_points);
+}
+
+int ClapTrap::getEnergy(void)
+{
+	return (this->Energy_points);
 }
