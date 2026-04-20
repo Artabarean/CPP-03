@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 10:11:35 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/17 12:56:05 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/20 10:35:26 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ DiamondTrap::DiamondTrap(std::string name)
 	std::cout << this->name << " has spawned as a DiamondTrap instance on the battlefield" << std::endl;
 }
 DiamondTrap::DiamondTrap(DiamondTrap &other)
+	: ClapTrap(other.name + "_clap_name"), FragTrap(other.name + "_clap_name"), ScavTrap(other.name + "_clap_name")
 {
 	*this = other;
 	std::cout << this->name << " clone has been created" << std::endl;

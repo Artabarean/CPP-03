@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 09:59:56 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/17 14:03:05 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/20 10:34:03 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int main(void)
 {
 	FragTrap Zaku("Zaku");
 	DiamondTrap Red_comet("Red_comet");
+	DiamondTrap Gouf(Red_comet);
 
+	Gouf.beRepaired(10);
 	Red_comet.beRepaired(10);
 	Zaku.beRepaired(10);
 	Zaku.attack("Red_comet");

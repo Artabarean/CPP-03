@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 09:59:52 by atabarea          #+#    #+#             */
-/*   Updated: 2026/04/17 12:34:12 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/04/20 10:23:25 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ ScavTrap::ScavTrap(std::string name)
 	std::cout << this->name << " has spawned as a ScavTrap instance on the battlefield" << std::endl;
 }
 ScavTrap::ScavTrap(ScavTrap &other)
+	: ClapTrap(other.name)
 {
 	*this = other;
 	std::cout << this->name << " clone has been created" << std::endl;
